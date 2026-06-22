@@ -3,6 +3,7 @@ export const CONFIG = {
     name: 'solid project',
     tagline: 'Building robust mobile & web applications',
     role: 'App Developer',
+    title: 'Founder & CEO',
   },
 
   skills: [

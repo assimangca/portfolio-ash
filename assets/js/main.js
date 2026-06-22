@@ -5,6 +5,31 @@ import { initProjects} from './projects.js';
 import { initScrollAnimations } from './scroll-animations.js';
 import { $, $$, lerp } from './utils.js';
 
+function initHeroTitle() {
+  const badge = $('#hero-title-badge');
+  if (!badge) return;
+  const title = CONFIG.brand?.title;
+  if (!title) return;
+  
+  badge.textContent = title;
+  badge.style.cssText = `
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    background: var(--accent-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-full);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-top: 16px;
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
+  `;
+}
+
 function initTypewriter() {
   const el = $('.hero__subtitle');
   if (!el) return;
@@ -393,6 +418,7 @@ function init() {
   initSkills(CONFIG.skills);
   initProjects(CONFIG.projects);
   initScrollAnimations();
+  initHeroTitle();
   initTypewriter();
   initParallax();
   initHeroBackground();
