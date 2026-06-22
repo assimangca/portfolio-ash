@@ -1,0 +1,133 @@
+export const CONFIG = {
+  brand: {
+    name: 'solid project',
+    tagline: 'Building robust mobile & web applications',
+    role: 'App Developer',
+  },
+
+  skills: [
+    { name: 'React Native', category: 'mobile', proficiency: 92, years: 4, description: 'Cross-platform mobile apps with native performance' },
+    { name: 'Flutter', category: 'mobile', proficiency: 85, years: 3, description: 'Beautiful UIs with Dart & Flutter framework' },
+    { name: 'Swift', category: 'mobile', proficiency: 78, years: 3, description: 'Native iOS development with SwiftUI' },
+    { name: 'Kotlin', category: 'mobile', proficiency: 75, years: 2, description: 'Native Android development with Jetpack Compose' },
+    { name: 'Ionic', category: 'mobile', proficiency: 68, years: 2, description: 'Hybrid mobile apps with web technologies' },
+    { name: 'Android', category: 'mobile', proficiency: 72, years: 3, description: 'Native Android with Java & XML layouts' },
+    { name: 'React', category: 'frontend', proficiency: 90, years: 5, description: 'Component-based SPAs with React ecosystem' },
+    { name: 'TypeScript', category: 'frontend', proficiency: 88, years: 4, description: 'Type-safe JavaScript for scalable apps' },
+    { name: 'CSS / SCSS', category: 'frontend', proficiency: 85, years: 5, description: 'Responsive layouts, animations, design systems' },
+    { name: 'Vue.js', category: 'frontend', proficiency: 72, years: 2, description: 'Progressive framework for web interfaces' },
+    { name: 'Next.js', category: 'frontend', proficiency: 82, years: 3, description: 'React framework with SSR & static generation' },
+    { name: 'Svelte', category: 'frontend', proficiency: 65, years: 1, description: 'Compiled framework for reactive UIs' },
+    { name: 'Tailwind CSS', category: 'frontend', proficiency: 86, years: 3, description: 'Utility-first CSS framework for rapid UI' },
+    { name: 'Redux', category: 'frontend', proficiency: 80, years: 4, description: 'State management for complex applications' },
+    { name: 'Node.js', category: 'backend', proficiency: 88, years: 5, description: 'Server-side JavaScript with Express & Fastify' },
+    { name: 'Python', category: 'backend', proficiency: 80, years: 4, description: 'Backend services with FastAPI & Django' },
+    { name: 'PostgreSQL', category: 'backend', proficiency: 82, years: 4, description: 'Relational databases, query optimization' },
+    { name: 'GraphQL', category: 'backend', proficiency: 76, years: 3, description: 'Flexible APIs with Apollo & Relay' },
+    { name: 'MongoDB', category: 'backend', proficiency: 70, years: 3, description: 'NoSQL document databases' },
+    { name: 'Go', category: 'backend', proficiency: 62, years: 2, description: 'High-performance concurrent backend services' },
+    { name: 'Redis', category: 'backend', proficiency: 74, years: 3, description: 'In-memory data store for caching & pub/sub' },
+    { name: 'Prisma', category: 'backend', proficiency: 78, years: 2, description: 'Type-safe ORM for Node.js & TypeScript' },
+    { name: 'AWS', category: 'cloud', proficiency: 82, years: 4, description: 'Lambda, ECS, S3, DynamoDB, CloudFront' },
+    { name: 'Docker', category: 'cloud', proficiency: 85, years: 4, description: 'Containerization & orchestration' },
+    { name: 'CI/CD', category: 'cloud', proficiency: 80, years: 4, description: 'Automated pipelines with GitHub Actions' },
+    { name: 'Firebase', category: 'cloud', proficiency: 75, years: 3, description: 'BAAS for auth, DB, push notifications' },
+    { name: 'GCP', category: 'cloud', proficiency: 70, years: 2, description: 'Google Cloud services & serverless computing' },
+    { name: 'Kubernetes', category: 'cloud', proficiency: 68, years: 2, description: 'Container orchestration at scale' },
+    { name: 'Terraform', category: 'cloud', proficiency: 65, years: 2, description: 'Infrastructure as code for cloud provisioning' },
+    { name: 'Git', category: 'tools', proficiency: 90, years: 6, description: 'Version control & collaboration workflows' },
+    { name: 'Figma', category: 'tools', proficiency: 78, years: 3, description: 'UI/UX design, prototyping, design systems' },
+    { name: 'Jest', category: 'tools', proficiency: 85, years: 4, description: 'Unit & integration testing' },
+    { name: 'Vite', category: 'tools', proficiency: 80, years: 2, description: 'Next-gen build tool for modern web dev' },
+    { name: 'ESLint', category: 'tools', proficiency: 82, years: 4, description: 'Static code analysis & linting' },
+    { name: 'Postman', category: 'tools', proficiency: 76, years: 4, description: 'API testing & documentation' },
+  ],
+
+  projects: [
+    {
+      title: 'CommuteFlow',
+      category: 'Mobile App',
+      description: 'Real-time transit tracking app with predictive arrival times, route optimization, and live crowd-sensing data. Built for iOS and Android using React Native.',
+      tech: ['React Native', 'TypeScript', 'Node.js', 'PostgreSQL', 'Redis', 'Mapbox'],
+      image: 'assets/images/placeholder-project.svg',
+      links: {
+        github: '#',
+        live: '#',
+      },
+    },
+    {
+      title: 'PulseHealth',
+      category: 'Health & Fitness',
+      description: 'A wellness platform connecting patients with healthcare providers through secure video consultations, health metrics tracking, and AI-powered symptom analysis.',
+      tech: ['Flutter', 'Dart', 'FastAPI', 'Python', 'PostgreSQL', 'WebRTC'],
+      image: 'assets/images/placeholder-project.svg',
+      links: {
+        github: '#',
+        live: '#',
+      },
+    },
+    {
+      title: 'StoreStack',
+      category: 'E-Commerce',
+      description: 'Headless commerce platform with real-time inventory management, intelligent product recommendations, and seamless multi-vendor marketplace capabilities.',
+      tech: ['React', 'TypeScript', 'Node.js', 'GraphQL', 'MongoDB', 'AWS'],
+      image: 'assets/images/placeholder-project.svg',
+      links: {
+        github: '#',
+        live: '#',
+      },
+    },
+    {
+      title: 'TaskForge',
+      category: 'Productivity',
+      description: 'Collaborative project management tool with Kanban boards, Gantt charts, time tracking, and automated workflow triggers for remote teams.',
+      tech: ['Vue.js', 'TypeScript', 'Node.js', 'PostgreSQL', 'Socket.io'],
+      image: 'assets/images/placeholder-project.svg',
+      links: {
+        github: '#',
+        live: '#',
+      },
+    },
+    {
+      title: 'WeatherVane',
+      category: 'Data Visualization',
+      description: 'Hyper-local weather forecasting app with beautiful data visualizations, severe weather alerts, and historical climate pattern analysis.',
+      tech: ['Swift', 'SwiftUI', 'CoreML', 'Python', 'AWS Lambda'],
+      image: 'assets/images/placeholder-project.svg',
+      links: {
+        github: '#',
+        live: '#',
+      },
+    },
+    {
+      title: 'LearnPath',
+      category: 'Education',
+      description: 'Adaptive learning platform with personalized curriculum paths, interactive coding exercises, and peer code review system.',
+      tech: ['React', 'TypeScript', 'Node.js', 'GraphQL', 'MongoDB', 'Docker'],
+      image: 'assets/images/placeholder-project.svg',
+      links: {
+        github: '#',
+        live: '#',
+      },
+    },
+  ],
+
+  about: {
+    bio: '<strong>solid project</strong> is a focused app development practice dedicated to building performant, accessible, and maintainable applications. We believe in clean code, thoughtful architecture, and delivering real value through technology.',
+    values: [
+      { icon: 'code', title: 'Clean Code', description: 'Readable, testable, and maintainable code is our foundation.' },
+      { icon: 'chart', title: 'Performance', description: 'Every millisecond matters. We optimize for speed and efficiency.' },
+      { icon: 'eye', title: 'User First', description: 'Accessible, intuitive interfaces that respect the user\'s time and attention.' },
+      { icon: 'layers', title: 'Scalable Architecture', description: 'Designs that grow with your needs, built to last and adapt.' },
+    ],
+  },
+
+  contact: {
+    email: 'hello@solidproject.dev',
+    social: {
+      github: '#',
+      linkedin: '#',
+      twitter: '#',
+    },
+  },
+};
