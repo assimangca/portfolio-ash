@@ -270,7 +270,8 @@ function initHeroBackground() {
         this.vy = (Math.random() - 0.5) * 0.5;
         this.radius = Math.random() * 1.5 + 0.5;
         this.opacity = Math.random() * 0.3 + 0.1;
-        this.hue = Math.random() > 0.5 ? 150 : 200;
+        const r = Math.random();
+        this.hue = r > 0.66 ? 150 : r > 0.33 ? 195 : 330;
       }
 
       update() {
@@ -297,8 +298,13 @@ function initHeroBackground() {
       draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = 'hsla(' + this.hue + ', 80%, 60%, ' + this.opacity + ')';
+        const saturation = this.hue === 330 ? '100%' : '100%';
+        const lightness = this.hue === 150 ? '50%' : this.hue === 195 ? '55%' : '55%';
+        ctx.fillStyle = 'hsla(' + this.hue + ', ' + saturation + ', ' + lightness + ', ' + this.opacity + ')';
+        ctx.shadowColor = 'hsl(' + this.hue + ', 100%, 50%)';
+        ctx.shadowBlur = 8;
         ctx.fill();
+        ctx.shadowBlur = 0;
       }
     }
 
@@ -328,7 +334,7 @@ function initHeroBackground() {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = 'hsla(150, 80%, 60%, ' + (0.05 * (1 - dist / 120)) + ')';
+            ctx.strokeStyle = 'hsla(150, 100%, 50%, ' + (0.08 * (1 - dist / 120)) + ')';
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
