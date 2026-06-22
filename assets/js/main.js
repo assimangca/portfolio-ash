@@ -149,11 +149,217 @@ function initRippleEffect() {
       const size = Math.max(rect.width, rect.height);
       const ripple = document.createElement('span');
       ripple.className = 'ripple';
-      ripple.style.cssText = `left:${x}px;top:${y}px;width:${size}px;height:${size}px;`;
+      ripple.style.cssText = 'left:' + x + 'px;top:' + y + 'px;width:' + size + 'px;height:' + size + 'px;';
       this.appendChild(ripple);
       ripple.addEventListener('animationend', () => ripple.remove());
     });
   });
+}
+
+function initHeroBackground() {
+  const hero = $('#hero');
+  if (!hero) return;
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion) return;
+
+  const auroraOrbs = hero.querySelectorAll('.hero__aurora-orb');
+  const particlesContainer = hero.querySelector('.hero__particles');
+  const canvas = hero.querySelector('.hero__canvas');
+
+  let mouseX = 0;
+  let mouseY = 0;
+  let currentX = 0;
+  let currentY = 0;
+
+  const heroRect = hero.getBoundingClientRect();
+  const centerX = heroRect.width / 2;
+  const centerY = heroRect.height / 2;
+
+  function updateMousePosition(e) {
+    const rect = hero.getBoundingClientRect();
+    mouseX = e.clientX - rect.left;
+    mouseY = e.clientY - rect.top;
+  }
+
+  function animateAuroraOrbs() {
+    currentX += (mouseX - currentX) * 0.05;
+    currentY += (mouseY - currentY) * 0.05;
+
+    auroraOrbs.forEach((orb, index) => {
+      const offsetX = (currentX - centerX) * (0.15 + index * 0.08);
+      const offsetY = (currentY - centerY) * (0.15 + index * 0.08);
+      const orbX = centerX + offsetX;
+      const orbY = centerY + offsetY;
+
+      orb.style.transform = 'translate(' + (orbX - orb.offsetWidth / 2) + 'px, ' + (orbY - orb.offsetHeight / 2) + 'px)';
+      orb.style.opacity = '0.4';
+    });
+
+    requestAnimationFrame(animateAuroraOrbs);
+  }
+
+  function createParticles() {
+    if (!particlesContainer) return;
+
+    const particleCount = 30;
+    for (let i = 0; i < particleCount; i++) {
+      createParticle();
+    }
+  }
+
+  function createParticle() {
+    if (!particlesContainer) return;
+
+    const particle = document.createElement('div');
+    particle.className = 'hero__particle';
+
+    const startX = Math.random() * heroRect.width;
+    const startY = heroRect.height + Math.random() * 100;
+    const tx = (Math.random() - 0.5) * 200;
+    const duration = 8000 + Math.random() * 7000;
+    const delay = Math.random() * 2000;
+    const size = 1 + Math.random() * 2;
+
+    particle.style.left = startX + 'px';
+    particle.style.top = startY + 'px';
+    particle.style.width = size + 'px';
+    particle.style.height = size + 'px';
+    particle.style.setProperty('--tx', tx + 'px');
+    particle.style.animation = 'particleFloat ' + duration + 'ms linear infinite';
+    particle.style.animationDelay = delay + 'ms';
+    particle.style.opacity = '0';
+
+    particlesContainer.appendChild(particle);
+
+    particle.addEventListener('animationend', () => {
+      particle.remove();
+      createParticle();
+    });
+  }
+
+  function initCanvas() {
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    let width = 0;
+    let height = 0;
+    let particles = [];
+    let animationId = null;
+
+    function resize() {
+      const rect = hero.getBoundingClientRect();
+      width = rect.width;
+      height = rect.height;
+      canvas.width = width * window.devicePixelRatio;
+      canvas.height = height * window.devicePixelRatio;
+      canvas.style.width = width + 'px';
+      canvas.style.height = height + 'px';
+      ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+    }
+
+    class CanvasParticle {
+      constructor() {
+        this.reset();
+      }
+
+      reset() {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.vx = (Math.random() - 0.5) * 0.5;
+        this.vy = (Math.random() - 0.5) * 0.5;
+        this.radius = Math.random() * 1.5 + 0.5;
+        this.opacity = Math.random() * 0.3 + 0.1;
+        this.hue = Math.random() > 0.5 ? 150 : 200;
+      }
+
+      update() {
+        const dx = mouseX - this.x;
+        const dy = mouseY - this.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        if (dist < 200) {
+          const force = (200 - dist) / 200 * 0.02;
+          this.vx -= dx / dist * force;
+          this.vy -= dy / dist * force;
+        }
+
+        this.x += this.vx;
+        this.y += this.vy;
+        this.vx *= 0.99;
+        this.vy *= 0.99;
+
+        if (this.x < 0 || this.x > width || this.y < 0 || this.y > height) {
+          this.reset();
+        }
+      }
+
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = 'hsla(' + this.hue + ', 80%, 60%, ' + this.opacity + ')';
+        ctx.fill();
+      }
+    }
+
+    function initParticles() {
+      particles = [];
+      const count = Math.min(80, Math.floor((width * height) / 15000));
+      for (let i = 0; i < count; i++) {
+        particles.push(new CanvasParticle());
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, width, height);
+
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < 120) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = 'hsla(150, 80%, 60%, ' + (0.05 * (1 - dist / 120)) + ')';
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        }
+      }
+
+      animationId = requestAnimationFrame(animate);
+    }
+
+    window.addEventListener('resize', () => {
+      resize();
+      initParticles();
+    });
+
+    hero.addEventListener('mousemove', updateMousePosition);
+
+    resize();
+    initParticles();
+    animate();
+
+    return () => {
+      cancelAnimationFrame(animationId);
+      hero.removeEventListener('mousemove', updateMousePosition);
+      window.removeEventListener('resize', resize);
+    };
+  }
+
+  hero.addEventListener('mousemove', updateMousePosition);
+  animateAuroraOrbs();
+  createParticles();
+  initCanvas();
 }
 
 function initTheme() {
@@ -183,6 +389,7 @@ function init() {
   initScrollAnimations();
   initTypewriter();
   initParallax();
+  initHeroBackground();
   initCardGlow();
   initProgressBar();
   initBackToTop();
