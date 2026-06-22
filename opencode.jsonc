@@ -1,0 +1,29 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+
+  "instructions": ["AGENTS.md"],
+
+  "skills": {
+    "paths": [".agents/skills"]
+  },
+
+  "agent": {
+    "css": {
+      "description": "CSS/style specialist for the portfolio's custom design system",
+      "mode": "subagent",
+      "prompt": "You are a CSS specialist for the solid-project-portfolio. The site uses a custom design system built with CSS custom properties (variables.css), a reset (reset.css), layout (layout.css), components (components.css), sections (sections.css), and animations (animations.css). Follow BEM naming conventions. Use the existing design tokens from variables.css. Maintain dark theme by default via `data-theme=\"dark\"` on `<html>`."
+    },
+    "js": {
+      "description": "JavaScript specialist for ES module architecture",
+      "mode": "subagent",
+      "prompt": "You are a vanilla JS specialist for the solid-project-portfolio. All scripts are ES modules loaded via `<script type=\"module\">` from `assets/js/main.js`. Follow the existing module pattern. Config data lives in `config.js`. DOM manipulation, event delegation, and intersection observers are the primary patterns. No frameworks."
+    }
+  },
+
+  "command": {
+    "dev": {
+      "description": "Start local dev server with live reload",
+      "prompt": "Start a local development server for the portfolio. Use `npx serve .` or `npx live-server .` to serve the static files with live reload."
+    }
+  }
+}

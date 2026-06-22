@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="solid project - Building robust mobile and web applications. App development portfolio.">
+  <meta name="theme-color" content="#0a0a0b">
+  <meta property="og:title" content="solid project - App Development">
+  <meta property="og:description" content="Building robust mobile and web applications">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <title>solid project — App Development</title>
+  <script>
+    (function () {
+      const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/sections.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+
+<body>
+
+  <div class="progress-bar" id="progress-bar" role="progressbar" aria-label="Scroll progress"></div>
+
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="header" role="banner">
+    <div class="header__inner container">
+      <a href="#" class="header__logo" aria-label="solid project home">
+        <span class="header__logo-mark">NX</span>
+        <span class="header__logo-text">NEXA</span>
+      </a>
+      <nav class="header__nav" role="navigation" aria-label="Main navigation">
+        <ul class="header__nav-list" id="nav-list">
+          <li><a href="#skills" class="header__nav-link">Skills</a></li>
+          <li><a href="#projects" class="header__nav-link">Projects</a></li>
+          <li><a href="#about" class="header__nav-link">About</a></li>
+          <li><a href="#contact" class="header__nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header__actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" width="18" height="18" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5" />
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+          </svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" width="18" height="18" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+        </button>
+        <button class="header__menu-btn" id="menu-btn" aria-label="Toggle navigation menu" aria-expanded="false"
+          aria-controls="nav-list">
+          <span class="header__menu-icon"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="hero" id="hero">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__gradient"></div>
+        <div class="hero__grid"></div>
+        <div class="hero__aurora" aria-hidden="true">
+          <div class="hero__aurora-orb hero__aurora-orb--1"></div>
+          <div class="hero__aurora-orb hero__aurora-orb--2"></div>
+          <div class="hero__aurora-orb hero__aurora-orb--3"></div>
+        </div>
+        <div class="hero__particles" aria-hidden="true"></div>
+        <canvas class="hero__canvas" aria-hidden="true"></canvas>
+      </div>
+      <div class="hero__inner container">
+        <div class="hero__content">
+          <p class="hero__label">App Development</p>
+          <h1 class="hero__title">
+            We build <span class="hero__highlight">nexa</span> applications
+          </h1>
+          <p class="hero__subtitle"
+            aria-label="Crafting performant, scalable mobile and web experiences with modern technology and clean architecture.">
+            Crafting performant, scalable mobile and web experiences
+            with modern technology and clean architecture.
+          </p>
+          <div class="hero__actions">
+            <a href="#skills" class="btn btn--primary">Explore Skills</a>
+            <a href="#contact" class="btn btn--ghost">Get in Touch</a>
+          </div>
+        </div>
+        <div class="hero__visual" aria-hidden="true">
+          <div class="hero__code-block">
+            <pre><code><span class="hl-c">// clean. scalable. solid.</span>
+<span class="hl-k">const</span> <span class="hl-f">build</span> <span class="hl-o">=</span> <span class="hl-p">(</span><span class="hl-v">vision</span><span class="hl-p">)</span> <span class="hl-o">=></span> <span class="hl-p">{</span>
+  <span class="hl-k">const</span> <span class="hl-v">app</span> <span class="hl-o">=</span> <span class="hl-k">new</span> <span class="hl-cn">SolidProject</span><span class="hl-p">(</span><span class="hl-v">vision</span><span class="hl-p">);</span>
+  <span class="hl-k">return</span> <span class="hl-v">app</span><span class="hl-o">.</span><span class="hl-f">deliver</span><span class="hl-p">();</span>
+<span class="hl-p">};</span></code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills section" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title" id="skills-title">Skills &amp; Expertise</h2>
+          <p class="section__desc">
+            Technologies and tools we work with daily to bring ideas to life.
+          </p>
+        </div>
+        <div class="skills__controls" role="tablist" aria-label="Filter skills by category">
+          <button class="skills__tab is-active" role="tab" aria-selected="true" data-category="all">All</button>
+          <button class="skills__tab" role="tab" aria-selected="false" data-category="mobile">Mobile</button>
+          <button class="skills__tab" role="tab" aria-selected="false" data-category="frontend">Frontend</button>
+          <button class="skills__tab" role="tab" aria-selected="false" data-category="backend">Backend</button>
+          <button class="skills__tab" role="tab" aria-selected="false" data-category="cloud">Cloud &amp; DevOps</button>
+          <button class="skills__tab" role="tab" aria-selected="false" data-category="tools">Tools</button>
+        </div>
+        <div class="skills__search" role="search">
+          <label for="skills-search" class="sr-only">Search skills</label>
+          <input type="text" id="skills-search" class="skills__search-input" placeholder="Search skills..."
+            autocomplete="off">
+        </div>
+        <div class="skills__grid" id="skills-grid" role="tabpanel">
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Selected Projects</h2>
+          <p class="section__subtitle">A showcase of applications we've designed and built from the ground up.</p>
+        </div>
+
+        <!-- THIS CONTAINER MUST EXIST FOR THE JAVASCRIPT TO WORK -->
+        <div id="projects-grid" class="projects-grid"></div>
+      </div>
+    </section>
+
+    <aside class="project-modal" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"
+      hidden>
+      <div class="project-modal__backdrop"></div>
+      <div class="project-modal__content" role="document">
+        <button class="project-modal__close" aria-label="Close modal">&times;</button>
+        <div class="project-modal__body">
+          <div class="project-modal__gallery">
+            <img src="" alt="" class="project-modal__image" id="modal-image">
+          </div>
+          <div class="project-modal__info">
+            <h3 class="project-modal__title" id="modal-title"></h3>
+            <p class="project-modal__category" id="modal-category"></p>
+            <p class="project-modal__description" id="modal-description"></p>
+            <div class="project-modal__tags" id="modal-tags"></div>
+            <div class="project-modal__links" id="modal-links"></div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <section class="about section" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title" id="about-title">About</h2>
+          <p class="section__desc">
+            Who we are and what drives us.
+          </p>
+        </div>
+        <div class="about__inner">
+          <div class="about__bio">
+            <p>
+              <strong>NEXA Derived from "Nexus" (a connection or series of connections).</strong> Nexa is a premier
+              development studio specializing in the nexus of complex data and human-centric design. We engineer
+              high-performance digital ecosystems—like real-time monitoring systems and interactive data dashboards—that
+              bridge the gap between abstract information and actionable insight. At Nexa, we believe technology should
+              be a force for clarity, turning sophisticated backend architecture into seamless, impactful experiences
+              that drive the future.
+            </p>
+          </div>
+          <div class="about__values">
+            <div class="about__value-card">
+              <div class="about__value-card-inner">
+                <span class="about__value-icon" aria-hidden="true">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="16 18 22 12 16 6" />
+                    <polyline points="8 6 2 12 8 18" />
+                  </svg>
+                </span>
+                <h3 class="about__value-title">Clean Code</h3>
+                <p class="about__value-desc">Readable, testable, and maintainable code is our foundation.</p>
+              </div>
+            </div>
+            <div class="about__value-card">
+              <div class="about__value-card-inner">
+                <span class="about__value-icon" aria-hidden="true">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 20V10" />
+                    <path d="M18 20V4" />
+                    <path d="M6 20v-4" />
+                  </svg>
+                </span>
+                <h3 class="about__value-title">Performance</h3>
+                <p class="about__value-desc">Every millisecond matters. We optimize for speed and efficiency.</p>
+              </div>
+            </div>
+            <div class="about__value-card">
+              <div class="about__value-card-inner">
+                <span class="about__value-icon" aria-hidden="true">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                </span>
+                <h3 class="about__value-title">User First</h3>
+                <p class="about__value-desc">Accessible, intuitive interfaces that respect the user's time and
+                  attention.</p>
+              </div>
+            </div>
+            <div class="about__value-card">
+              <div class="about__value-card-inner">
+                <span class="about__value-icon" aria-hidden="true">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                    <path d="M2 17l10 5 10-5" />
+                    <path d="M2 12l10 5 10-5" />
+                  </svg>
+                </span>
+                <h3 class="about__value-title">Scalable Architecture</h3>
+                <p class="about__value-desc">Designs that grow with your needs, built to last and adapt.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact section" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title" id="contact-title">Let's Build Together</h2>
+          <p class="section__desc">
+            Have a project in mind? Reach out and let's make it happen.
+          </p>
+        </div>
+        <div class="contact__inner">
+          <form class="contact__form" id="contact-form" novalidate>
+            <div class="contact__form-group">
+              <label for="form-name" class="contact__label">Name</label>
+              <input type="text" id="form-name" class="contact__input" placeholder="Your name" required
+                autocomplete="name">
+              <span class="contact__error" role="alert"></span>
+            </div>
+            <div class="contact__form-group">
+              <label for="form-email" class="contact__label">Email</label>
+              <input type="email" id="form-email" class="contact__input" placeholder="your@email.com" required
+                autocomplete="email">
+              <span class="contact__error" role="alert"></span>
+            </div>
+            <div class="contact__form-group">
+              <label for="form-message" class="contact__label">Message</label>
+              <textarea id="form-message" class="contact__textarea" rows="5" placeholder="Tell me about your project..."
+                required autocomplete="off"></textarea>
+              <span class="contact__error" role="alert"></span>
+            </div>
+            <button type="submit" class="btn btn--primary contact__submit">Send Message</button>
+          </form>
+          <div class="contact__info">
+            <div class="contact__social">
+              <a href="#" class="contact__social-link" aria-label="GitHub">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12 24 5.37 18.63 0 12 0z" />
+                </svg>
+              </a>
+              <a href="#" class="contact__social-link" aria-label="LinkedIn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                </svg>
+              </a>
+              <a href="#" class="contact__social-link" aria-label="Twitter">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
+              </a>
+              <a href="#" class="contact__social-link" aria-label="Email">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+              </a>
+            </div>
+            <p class="contact__availability">
+              <span class="contact__status-dot"></span>
+              Available for new projects
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container footer__inner">
+      <p class="footer__copy">&copy; <span id="year"></span> solid project. All rights reserved.</p>
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <a href="#skills" class="footer__link">Skills</a>
+        <a href="#projects" class="footer__link">Projects</a>
+        <a href="#about" class="footer__link">About</a>
+        <a href="#contact" class="footer__link">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+      stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15" />
+    </svg>
+  </button>
+
+  <script type="module" src="assets/js/main.js"></script>
+</body>
+
+</html>
