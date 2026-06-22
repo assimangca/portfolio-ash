@@ -110,6 +110,72 @@ export const CONFIG = {
         live: '#',
       },
     },
+    {
+      title: 'DevTrack',
+      category: 'Developer Tools',
+      description: 'Open-source developer productivity tracker with GitHub/GitLab integration, automated commit analysis, team velocity dashboards, and burnout prevention alerts.',
+      tech: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'GraphQL', 'GitHub API', 'Docker'],
+      image: 'assets/images/placeholder-project.svg',
+      links: {
+        github: '#',
+        live: '#',
+      },
+    },
+    {
+      title: 'FinFlow',
+      category: 'FinTech',
+      description: 'Personal finance manager with multi-currency support, automated transaction categorization, budget forecasting, and secure bank-grade encryption for sensitive data.',
+      tech: ['Kotlin', 'Jetpack Compose', 'Swift', 'SwiftUI', 'Node.js', 'PostgreSQL', 'Plaid API'],
+      image: 'assets/images/placeholder-project.svg',
+      links: {
+        github: '#',
+        live: '#',
+      },
+    },
+    {
+      title: 'StreamSync',
+      category: 'Media & Entertainment',
+      description: 'Real-time collaborative streaming platform with synchronized playback, live chat, reaction overlays, and custom watch party rooms for distributed teams.',
+      tech: ['React', 'TypeScript', 'Node.js', 'WebRTC', 'Socket.io', 'Redis', 'AWS Media Services'],
+      image: 'assets/images/placeholder-project.svg',
+      links: {
+        github: '#',
+        live: '#',
+      },
+    },
+    {
+      title: 'AgriSense',
+      category: 'IoT & Agriculture',
+      description: 'Smart farming solution with soil moisture sensors, automated irrigation control, crop health monitoring via computer vision, and yield prediction analytics.',
+      tech: ['Flutter', 'Python', 'TensorFlow', 'Raspberry Pi', 'MQTT', 'InfluxDB', 'GCP IoT Core'],
+      image: 'assets/images/placeholder-project.svg',
+      links: {
+        github: '#',
+        live: '#',
+      },
+    },
+    {
+      title: 'CryptoPulse',
+      category: 'Web3 & Blockchain',
+      description: 'DeFi portfolio tracker with real-time multi-chain analytics, yield farming optimization, impermanent loss calculator, and wallet transaction history with tax reporting.',
+      tech: ['Next.js', 'TypeScript', 'Wagmi', 'Viem', 'GraphQL', 'The Graph', 'Tailwind CSS'],
+      image: 'assets/images/placeholder-project.svg',
+      links: {
+        github: '#',
+        live: '#',
+      },
+    },
+    {
+      title: 'VoiceBridge',
+      category: 'AI & Accessibility',
+      description: 'Real-time speech-to-text and translation app with offline capabilities, speaker diarization, custom vocabulary training, and seamless cross-platform synchronization.',
+      tech: ['React Native', 'TypeScript', 'TensorFlow Lite', 'ONNX Runtime', 'Python', 'FastAPI', 'WebAssembly'],
+      image: 'assets/images/placeholder-project.svg',
+      links: {
+        github: '#',
+        live: '#',
+      },
+    },
   ],
 
   about: {
